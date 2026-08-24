@@ -16,15 +16,8 @@ class Solution {
         int right = 1;
         for(int i=nums.length-1;i>=0;i--)
         {   
-            if(i==nums.length-1)
-            {
-                answer[i]=answer[i]*right;
-            }
-            else
-            {
-                right = right*nums[i+1];
-                answer[i] = answer[i]*right;
-            }
+            answer[i]=answer[i]*right;
+            right = right*nums[i];
         }
         return answer;
     }
